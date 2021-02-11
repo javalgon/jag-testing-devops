@@ -1,21 +1,33 @@
-// comment
-pipeline {
-  agent any
-  stages {
-        stage('build') {
-            steps {
-                bash -c "echo 'Hola mundo'
-            }
-        }
-                stage('testing'){
-                        steps{
-                                bash -c "echo 'Hola mundo'
-                        }
-                }
-                stage('deployment'){
-                        steps{
-                                bash -c "echo 'Hola mundo'
-                        }
-                }
-        }
+#!groovy
+
+node {
+   // ------------------------------------
+   // -- ETAPA: Compilar
+   // ------------------------------------
+   stage 'Compilar'
+   
+   // -- Configura variables
+   echo 'Configurando variables'
+
+   
+   // ------------------------------------
+   // -- ETAPA: Test
+   // ------------------------------------
+   stage 'Test'
+   echo 'Ejecutando tests'
+
+   
+   // ------------------------------------
+   // -- ETAPA: Instalar
+   // ------------------------------------
+   stage 'Instalar'
+   echo 'Instala el paquete generado en el repositorio maven'
+
+
+   // ------------------------------------
+   // -- ETAPA: Archivar
+   // ------------------------------------
+   stage 'Archivar'
+   echo 'Archiva el paquete el paquete generado en Jenkins'
+
 }
