@@ -3,5 +3,5 @@
   tasks:
   - name: copiar el fichero index.html
     copy:
-      src: ./index.html
+      src: ../index.html
       dest: /tmp/
