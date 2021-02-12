@@ -1,0 +1,7 @@
+- hosts: 172.18.181.187
+
+  tasks:
+  - name: copiar el fichero index.html
+    copy:
+      src: ./index.html
+      dest: /tmp/
